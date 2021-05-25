@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace lab10_1
+namespace Lab10_2
 {
     public partial class Form1 : Form
     {
@@ -24,18 +24,25 @@ namespace lab10_1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int a1 = (int)numericUpDown1.Value;
-            int d = (int)numericUpDown2.Value;
-            int n = (int)numericUpDown3.Value;
+            int math = 3;
+            int Englisg = 4;
+            int History = 4;
+            int biologi = 5;
 
-            int sum = 0;
-
-            for (int i = 0; i < numericUpDown3.Value; i++)
+            float sum = (math + Englisg + History + biologi) / 4;
+            if (math < sum || Englisg < sum || History < sum || biologi < sum) 
             {
-                sum = ((2*a1) + d*(n-1))/2 * n;
+                MessageBox.Show("Seredniy bal = " + sum + "\nMath =" + math);
             }
+        }
 
-            MessageBox.Show("" + sum);
+        private void button3_Click(object sender, EventArgs e)
+        {
+            DateTime dateNow = DateTime.Now;
+            int year = dateNow.Year - dateTimePicker1.Value.Year;
+
+            MessageBox.Show("" + year);
+
         }
     }
 }
